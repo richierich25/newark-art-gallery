@@ -2,6 +2,11 @@ const db = require('../db/connection');
 const config = require('../config/config.json')[process.env.NODE_ENV || 'dev'];
 const url = config.url;
 const firstKey = config.firstKey;
+const limitMax = config.limitMax;
+const limitDefault = config.limitDefault;
+const webSite = config.webSite;
+const queryMax = config.queryMax;
+const offsetMax = config.offsetMax;
 
 function getItemsCount(req, res, next) {
   let q = req.query['q'];
@@ -28,6 +33,17 @@ function getItemsCount(req, res, next) {
 }
 
 function getItems(req, res, next) {
+  let q = req.query['q'];
+  if (q != undefined) { q = q.toUpperCase().substring(0, queryMax); }
+
+  let limit = parseInt(req.query['limit']);
+  let offset = parseInt(req.query['offset']);
+
+  if (isNaN(limit)) { limit = limitDefault; }
+  if (isNaN(offset)) { offset = 0; }
+  if (limit > limitMax) { limit = limitMax; }
+  if (offset > offsetMax) { offset = 0; }
+
   let sql =
     'SELECT' +
     ' t1.id' +
@@ -36,8 +52,16 @@ function getItems(req, res, next) {
     ',t1.email' +
     ',t1.address' +
     ' FROM artist t1' +
-    ' WHERE (t1.id >= ' + firstKey + ')' +
-    ' ORDER BY t1.name ASC';
+    ' WHERE (t1.id >= ' + firstKey + ')';
+    if (q != undefined) {
+      sql = sql +
+        'AND (' +
+        '(UPPER(name) LIKE \'%' + q + '%\')' +
+        ')';
+    }
+    sql = sql + ' ORDER BY name ASC';
+    sql = sql + ' LIMIT ' + limit + ' OFFSET ' + offset;
+
   db.any(sql)
     .then(records => {
       let results = [];
