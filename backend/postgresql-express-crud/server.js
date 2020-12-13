@@ -8,6 +8,8 @@ const cookieParser = require('cookie-parser');
 const pretty = require('express-prettify');
 const cors = require('cors');
 
+const artists = require('./app/routes/artists');
+
 const cities = require('./app/routes/cities');
 const companies = require('./app/routes/companies');
 const continents = require('./app/routes/continents');
@@ -30,6 +32,8 @@ app.use(pretty({ always: true }));
 app.use(cookieParser());
 app.use(compression());
 app.use(cors());
+
+app.use('/artists', artists);
 
 app.use('/cities', cities);
 app.use('/companies', companies);

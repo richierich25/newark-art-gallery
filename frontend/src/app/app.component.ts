@@ -46,6 +46,13 @@ export class AppComponent {
         { name: 'movies', link: 'crud/movies' },
         { name: 'shows-images', link: 'crud/shows-images' },
         { name: 'movies-images', link: 'crud/movies-images' },
+        { name: 'Artists', link: 'crud/artists' },
+        { name: 'Artwork', link: 'crud/artwork' },
+        { name: 'Collectors', link: 'crud/collectors' },
+        { name: 'Customers', link: 'crud/customers' },
+        { name: 'Shows', link: 'crud/shows' },
+        { name: 'Associates', link: 'crud/associates' },
+
       ]
     },
     {

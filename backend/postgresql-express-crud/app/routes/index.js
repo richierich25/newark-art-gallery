@@ -24,6 +24,7 @@ router.get('/', function (req, res) {
       "continentsUrl": url + "/continents",
       "countriesUrl": url + "/countries",
       "citiesUrl": url + "/cities",
+      "artistsUrl": url + "/artists",
     }
   );
 })

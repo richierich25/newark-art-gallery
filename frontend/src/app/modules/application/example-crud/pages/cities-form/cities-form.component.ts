@@ -6,10 +6,9 @@ import { PageFormComponent } from '../../components/page-form/page-form.componen
 @Component({
   selector: 'app-cities-form',
   templateUrl: './cities-form.component.html',
-  styleUrls: ['./cities-form.component.css']
+  styleUrls: ['./cities-form.component.css'],
 })
 export class CitiesFormComponent extends PageFormComponent {
-
   constructor(injector: Injector) {
     super(injector);
   }
@@ -24,9 +23,7 @@ export class CitiesFormComponent extends PageFormComponent {
   createForm(): void {
     this.form = this.fb.group({
       id: null,
-      name: [null,
-        [Validators.required]
-      ],
+      name: [null, [Validators.required]],
       capital: null,
       wikipediaLink: null,
     });
@@ -52,5 +49,4 @@ export class CitiesFormComponent extends PageFormComponent {
   get name(): any {
     return this.form.get('name');
   }
-
 }

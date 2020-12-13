@@ -18,7 +18,8 @@ const db = pgp(connection);
 const databaseName = config.dbName;
 const databaseType = config.databaseType;
 
-let url = 'pg://' + config.dbUser + ':*******' + '@' + config.dbHost + ':' + config.dbPort;
+// let url = 'pg://' + config.dbUser + ':*******' + '@' + config.dbHost + ':' + config.dbPort; postgres
+let url = 'pg://' + config.dbUser + ':' + config.dbPassword + '@' + config.dbHost + ':' + config.dbPort;
 db.connect()
   .then(obj => {
     console.log('- ' + databaseType + ' Server Connection -> { ' + url + ' }');

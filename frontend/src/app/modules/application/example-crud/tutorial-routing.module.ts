@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '', component: TutorialComponent, children: [
       {
+        path: 'artists',
+        loadChildren: () => import('./pages/artists-list/artists-list.module').then(mod => mod.ArtistsListModule)
+      },
+      {
+        path: 'artists/:id',
+        loadChildren: () => import('./pages/artists-form/artists-form.module').then(mod => mod.ArtistsFormModule)
+      },
+      {
         path: 'continents',
         loadChildren: () => import('./pages/continents-list/continents-list.module').then(mod => mod.ContinentsListModule)
       },
@@ -58,6 +66,7 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./pages/movies-images-list/movies-images-list.module').then(mod => mod.MoviesImagesListModule)
       },
+
     ]
   },
 ];

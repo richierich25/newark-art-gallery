@@ -4,11 +4,11 @@
       <th *ngFor="let column of columns" [class]="column.title.class">{{ column.title.caption }}</th>
     </tr>
   </thead>
-  <tfoot>
+  <!-- <tfoot>
     <tr>
       <th *ngFor="let column of columns" [class]="column.title.class"> {{ column.title.caption }}</th>
     </tr>
-  </tfoot>
+  </tfoot> -->
   <tbody>
     <tr *ngFor="let record of items; let i=index">
       <!--      <td>{{i + 1 + (pagination.current - 1) * pagination.perPage}}</td>-->
