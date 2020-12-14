@@ -15,6 +15,14 @@ const routes: Routes = [
         loadChildren: () => import('./pages/artists-form/artists-form.module').then(mod => mod.ArtistsFormModule)
       },
       {
+        path: 'collectors',
+        loadChildren: () => import('./pages/collectors-list/collectors-list.module').then(mod => mod.CollectorsListModule)
+      },
+      {
+        path: 'collectors/:id',
+        loadChildren: () => import('./pages/collectors-form/collectors-form.module').then(mod => mod.CollectorsFormModule)
+      },
+      {
         path: 'continents',
         loadChildren: () => import('./pages/continents-list/continents-list.module').then(mod => mod.ContinentsListModule)
       },

@@ -9,6 +9,7 @@ const pretty = require('express-prettify');
 const cors = require('cors');
 
 const artists = require('./app/routes/artists');
+const collectors = require('./app/routes/collectors');
 
 const cities = require('./app/routes/cities');
 const companies = require('./app/routes/companies');
@@ -34,6 +35,7 @@ app.use(compression());
 app.use(cors());
 
 app.use('/artists', artists);
+app.use('/collectors', collectors);
 
 app.use('/cities', cities);
 app.use('/companies', companies);
