@@ -1,0 +1,174 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="form">
+          <div class="row">
+            <div class="col">
+              <div class="d-flex md-form form-group mt-0">
+                <div class="disabled clearfix d-none d-md-block pt-2 ml-4">
+                  <i class="{{ icon }} text-primary mr-2"></i>
+                  <span class="text-primary font-weight-bold mr-4">{{ titleForm }}</span>
+                  <i class="fas fa-database {{ datasourceColor }} mr-2 ml-4 mr-2"></i>
+                  <span class="{{ datasourceColor }} ml-2">Datesource : </span>
+                  <span class="{{ datasourceColor }} ml-2">{{ datasource }}</span>
+                </div>
+                <a class="navbar-btn waves-effect waves-light ml-auto px-3 pt-2">
+                  <button [disabled]="!api" type="submit" class="btn btn-outline-primary btn-sm mb-2 ml-3"
+                    (click)="onCreate()"><i class="fas fa-plus fa-lg"></i></button>
+                  <button [disabled]="form.invalid || !api" type="submit"
+                    class="btn btn-outline-primary btn-sm mb-2 ml-3" (click)="onUpdate()"><i
+                      class="fas fa-save fa-lg"></i></button>
+                  <button [disabled]="form.invalid || !api || item.id==undefined || item.id==null" type="submit"
+                    class="btn btn-outline-primary btn-sm mb-2 ml-3" (click)="onCopy()"><i
+                      class="fas fa-copy fa-lg"></i></button>
+                  <button [disabled]="form.invalid || !api || item.id==undefined || item.id==null" type="submit"
+                    class="btn btn-outline-primary btn-sm mb-2 ml-3" (click)="onDelete()"><i
+                      class="fas fa-trash-alt fa-lg"></i></button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="id" class="text-info">Id</label>
+                  <input type="text" formControlName="id" class="text-info form-control" placeholder="" id="id"
+                    readonly>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="saleNo" class="text-info">Sale Number</label>
+                  <input type="text" formControlName="saleNo" class="text-info form-control"
+                    placeholder="" id="saleNo" readonly>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="cusSSN" class="text-primary font-weight-bold">Customer SSN</label>
+                  <input type="text" formControlName="cusSSN" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="cusSSN">
+                  <div *ngIf="cusSSN.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="cusSSN.errors.required">
+                      Customer SSN is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="date" class="text-primary font-weight-bold">Date</label>
+                  <input type="date" formControlName="date" class="text-primary form-control font-weight-bold"
+                    placeholder="YYYY-MM-DD" id="date">
+                  <div *ngIf="date.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="date.errors.required">
+                      Date is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="assocEmpId" class="text-primary font-weight-bold">Associate Emp ID</label>
+                  <input type="text" formControlName="assocEmpId" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="assocEmpId">
+                  <div *ngIf="assocEmpId.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="assocEmpId.errors.required">
+                      Associate Emp ID is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="assocName" class="text-primary font-weight-bold">Associate Name</label>
+                  <input type="text" formControlName="assocName" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="assocName">
+                  <div *ngIf="assocName.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="assocName.errors.required">
+                      Associate Name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="artistName" class="text-primary font-weight-bold">Artist Name</label>
+                  <input type="text" formControlName="artistName" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="artistName">
+                  <div *ngIf="artistName.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="artistName.errors.required">
+                      Artist Name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="artworkName" class="text-primary font-weight-bold">Artwork Name</label>
+                  <input type="text" formControlName="artworkName" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="artworkName">
+                  <div *ngIf="artworkName.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="artworkName.errors.required">
+                      Artwork Name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="sellingPrice" class="text-primary font-weight-bold">Selling Price</label>
+                  <input type="text" formControlName="sellingPrice" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="sellingPrice">
+                  <div *ngIf="sellingPrice.invalid" class="alert alert-primary mt-2">
+                    <div *ngIf="sellingPrice.errors.required">
+                      Selling Price is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="artistPay" class="text-primary font-weight-bold">Artist Pay</label>
+                  <input type="text" formControlName="artistPay" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="artistPay" readonly>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="galComm" class="text-primary font-weight-bold">Gallery Commission</label>
+                  <input type="text" formControlName="galComm" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="galComm" readonly>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="assocComm" class="text-primary font-weight-bold">Associate Commission</label>
+                  <input type="text" formControlName="assocComm" class="text-primary form-control font-weight-bold"
+                    placeholder="" id="assocComm" readonly>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

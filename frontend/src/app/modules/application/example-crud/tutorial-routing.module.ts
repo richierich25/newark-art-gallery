@@ -23,6 +23,14 @@ const routes: Routes = [
         loadChildren: () => import('./pages/collectors-form/collectors-form.module').then(mod => mod.CollectorsFormModule)
       },
       {
+        path: 'sales',
+        loadChildren: () => import('./pages/sales-list/sales-list.module').then(mod => mod.SalesListModule)
+      },
+      {
+        path: 'sales/:id',
+        loadChildren: () => import('./pages/sales-form/sales-form.module').then(mod => mod.SalesFormModule)
+      },
+      {
         path: 'continents',
         loadChildren: () => import('./pages/continents-list/continents-list.module').then(mod => mod.ContinentsListModule)
       },

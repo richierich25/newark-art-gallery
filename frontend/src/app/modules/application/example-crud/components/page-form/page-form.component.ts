@@ -112,6 +112,7 @@ export class PageFormComponent {
       .subscribe(data => {
         this.item = data;
         this.form.setValue(data);
+        alert('Record Created Successfully!');
       });
   }
 
@@ -120,6 +121,7 @@ export class PageFormComponent {
       .subscribe(data => {
         this.item = data;
         this.form.setValue(this.item);
+        alert('Record Updated Successfully!');
       });
   }
 
@@ -127,6 +129,7 @@ export class PageFormComponent {
     this.itemsService.deleteItem(url, id)
       .subscribe(data => {
         this.resetForm();
+        alert('Record Deleted Successfully!');
       });
   }
 

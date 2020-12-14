@@ -52,6 +52,7 @@ export class AppComponent {
         { name: 'Customers', link: 'crud/customers' },
         { name: 'Shows', link: 'crud/shows' },
         { name: 'Associates', link: 'crud/associates' },
+        { name: 'Sales', link: 'crud/sales' },
 
       ]
     },
