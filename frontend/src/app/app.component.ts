@@ -53,7 +53,9 @@ export class AppComponent {
         { name: 'Shows', link: 'crud/shows' },
         { name: 'Associates', link: 'crud/associates' },
         { name: 'Sales', link: 'crud/sales' },
-
+        { name: 'Gallery Sale Report', link: 'crud/sales-report' },
+        { name: 'Associate Commission Report', link: 'crud/assoc-comm-report' },
+        { name: 'Artist Sale Report', link: 'crud/artist-sales-report' },
       ]
     },
     {

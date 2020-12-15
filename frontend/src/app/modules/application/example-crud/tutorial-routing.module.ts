@@ -31,6 +31,18 @@ const routes: Routes = [
         loadChildren: () => import('./pages/sales-form/sales-form.module').then(mod => mod.SalesFormModule)
       },
       {
+        path: 'sales-report',
+        loadChildren: () => import('./pages/sales-report-list/sales-report-list.module').then(mod => mod.SalesReportListModule)
+      },
+      {
+        path: 'artist-sales-report',
+        loadChildren: () => import('./pages/artist-sales-report-list/artist-sales-report-list.module').then(mod => mod.ArtistSalesReportListModule)
+      },
+      {
+        path: 'assoc-comm-report',
+        loadChildren: () => import('./pages/assoc-comm-report-list/assoc-comm-report-list.module').then(mod => mod.AssocCommReportListModule)
+      },
+      {
         path: 'continents',
         loadChildren: () => import('./pages/continents-list/continents-list.module').then(mod => mod.ContinentsListModule)
       },

@@ -20,7 +20,7 @@ export class CollectorsListComponent extends PageListComponent implements OnInit
 
     this.endpoint = 'collectors';
     this.link = 'collectors';
-    this.placeholder = 'collectors...';
+    this.placeholder = 'Enter Collector Name';
     this.results = 'Collectors';
     this.found = 'collectors';
     this.creation = 'Collector';

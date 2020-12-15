@@ -20,7 +20,7 @@ export class ArtistsListComponent extends PageListComponent implements OnInit  {
 
     this.endpoint = 'artists';
     this.link = 'artists';
-    this.placeholder = 'artists...';
+    this.placeholder = 'Enter Artist Name';
     this.results = 'Artists';
     this.found = 'artists';
     this.creation = 'Artist';

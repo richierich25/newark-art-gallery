@@ -16,6 +16,9 @@
         <div *ngIf="column.type==null" (click)="selectItem(record['id'])" style="cursor: pointer">
           {{ record[column.data.field] }}
         </div>
+        <div *ngIf="column.type=='report'">
+          {{ record[column.data.field] }}
+        </div>
         <div *ngIf="column.type=='num'" (click)="selectItem(record['id'])" style="cursor: pointer">
           {{ i + 1 }}
         </div>
