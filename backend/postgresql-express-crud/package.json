@@ -10,9 +10,9 @@
     "pm2-prod": "pm2 start process.config.js --env prod"
   },
   "author": {
-    "name": "danny",
-    "email": "dannyganatan@gmail.com",
-    "url": "https://www.ganatan.com/"
+    "name": "Richard Abraham",
+    "email": "richierich25@gmail.com",
+    "url": "https://www.richierich25.com/"
   },
   "license": "MCP",
   "dependencies": {

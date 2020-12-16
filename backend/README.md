@@ -1,4 +1,4 @@
-# Angular 11 / Bootstrap 5 & CRUD REST API
+# Newark Modern Gallery CRUD REST API
 
 ## Back-end
 
@@ -103,5 +103,3 @@ npm run create
 npm run export
 
 ```
-
-

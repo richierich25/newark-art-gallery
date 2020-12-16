@@ -1,12 +1,8 @@
-# Angular 11 / Bootstrap 5 & CRUD REST API
+# Newark Modern Gallery CRUD REST API
 
 <table>
 <tr>
 <td>
-  <a href="https://www.ganatan.com/en">
-    <img src="./img/ganatan-about-github.png" align="right"
-    alt="Ganatan Angular Example Demo" width="140" height="140">
-  </a>
 
 it's a repo designed to create a **Web Application with Angular 11**
 
@@ -24,23 +20,14 @@ it's a repo designed to create a **Web Application with Angular 11**
 </tr>
 </table>
 
-# [Live Demo](#live-demo)
-Here is a working live demo :  https://angular.ganatan.com/
-
-
 <p align="center">
   <p align="center">
-    <a href="https://angular.ganatan.com/">
+    <a href="#">
       <img src="https://media.giphy.com/media/RfqiR12yhtHpwaItBq/giphy.gif" alt="Angular 11 Example Application"/>
     </a>
   </p>
 </p>
 
-
-
-
-## Lighthouse Audit
-<img src="https://api.ganatan.com/articles/img/search-engine-optimization-avec-angular-lighthouse-after.png"/>
 
 ## Table of contents
 
@@ -80,13 +67,8 @@ Here is a working live demo :  https://angular.ganatan.com/
 # select a repo from github, gitlab or bitbucket
 
 # download the example or clone the repo from github
-git clone https://github.com/ganatan/angular11-app.git
+git clone https://github.com/richierich25/newark-art-gallery.git
 
-# download the example or clone the repo from gitlab
-git clone https://gitlab.com/ganatan/angular11-app.git
-
-# download the example or clone the repo from bitbucket
-git clone https://bitbucket.org/ganatan/angular11-app.git
 
 # change directory
 cd angular11-app
@@ -267,14 +249,3 @@ pm2 start process.config.js --env prod
 * in your browser [http://localhost:5004/continents](http://localhost:5004/continents) 
 * in your browser [http://localhost:5004/countries](http://localhost:5004/countries) 
 * in your browser [http://localhost:5004/cities](http://localhost:5004/cities) 
-
-### Author
-* Updated : 07/12/2020
-* Author  : danny
-
-## Documentation
-English Tutorials
-- Step by Step - https://www.ganatan.com/tutorials/en
-
-Tutoriels en français
-- Etapes par étapes - https://www.ganatan.com/tutorials
