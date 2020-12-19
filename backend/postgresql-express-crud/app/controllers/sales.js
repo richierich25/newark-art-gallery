@@ -19,7 +19,7 @@ function getItemsCount(req, res, next) {
   if (q != undefined) {
     sql = sql +
       'AND (' +
-      '(UPPER(saleNo) LIKE \'%' + q + '%\')' +
+      '(cast(saleNo as varchar) LIKE \'%' + q + '%\')' +
       ')';
   }
   db.one(sql)
@@ -62,12 +62,13 @@ function getItems(req, res, next) {
     ' WHERE (t1.id >= ' + firstKey + ')';
     if (q != undefined) {
       sql = sql +
-        'AND (' +
-        '(UPPER(saleNo) LIKE \'%' + q + '%\')' +
+        ' AND (' +
+        '(cast(saleNo as varchar) LIKE \'%' + q + '%\')' +
         ')';
     }
     sql = sql + ' ORDER BY saleNo ASC';
     sql = sql + ' LIMIT ' + limit + ' OFFSET ' + offset;
+
   db.any(sql)
     .then(records => {
       let results = [];

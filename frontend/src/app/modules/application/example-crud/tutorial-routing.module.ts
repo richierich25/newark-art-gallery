@@ -92,7 +92,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('./pages/movies-images-list/movies-images-list.module').then(mod => mod.MoviesImagesListModule)
+        loadChildren: () => import('./pages/artists-list/artists-list.module').then(mod => mod.ArtistsListModule)
       },
 
     ]

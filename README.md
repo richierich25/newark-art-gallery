@@ -20,14 +20,6 @@ it's a repo designed to create a **Web Application with Angular 11**
 </tr>
 </table>
 
-<p align="center">
-  <p align="center">
-    <a href="#">
-      <img src="https://media.giphy.com/media/RfqiR12yhtHpwaItBq/giphy.gif" alt="Angular 11 Example Application"/>
-    </a>
-  </p>
-</p>
-
 
 ## Table of contents
 

@@ -13,15 +13,17 @@ function getItemsCount(req, res, next) {
   if (q != undefined) { q = q.toUpperCase(); }
   let sql =
     'SELECT' +
-    ' count(id) as "count"' +
-    ' FROM sale' +
-    ' WHERE (id >= ' + firstKey + ')';
+    ' count(*) as "count"' +
+    ' from (select  extract (year from cast(date as date)) as "yearsel" from sale ' +
+    ' WHERE true';
   if (q != undefined) {
     sql = sql +
-      'AND (' +
-      '(UPPER(assocName) LIKE \'%' + q + '%\')' +
+      ' AND (' +
+      'cast( (extract (year from cast(date as date))) as varchar) LIKE \'%' + q + '%\'' +
       ')';
   }
+  sql = sql + ' group by extract (year from cast(date as date)) ) as "groupedCount"';
+  console.log(sql);
   db.one(sql)
     .then(function (result) {
       res.status(200)
@@ -47,10 +49,19 @@ function getItems(req, res, next) {
   let sql =
     'SELECT' +
     ' extract (year from cast(t1.date as date)) as "year"' +
-    ',sum(t1.sellingPrice) as "total"' +
-    ' FROM sale t1';
+    ', sum(t1.sellingPrice) as "total"' +
+    ' FROM sale t1'+
+    ' WHERE (t1.id >= ' + firstKey + ')';
+    if (q != undefined) {
+      sql = sql +
+        ' AND (' +
+        '(cast( (extract (year from cast(t1.date as date))) as varchar) LIKE \'%' + q + '%\')' +
+        ')';
+    }
+
     sql = sql + ' group by extract (year from cast(t1.date as date))';
     sql = sql + ' LIMIT ' + limit + ' OFFSET ' + offset;
+    console.log(sql);
   db.any(sql)
     .then(records => {
       let results = [];

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent {
+export class GridComponent implements OnInit{
 
   @Input() items: any;
   @Input() columns: any;
@@ -15,7 +15,11 @@ export class GridComponent {
   @Input() itemsCount: any;
   @Input() pagination: any;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+  }
+
+  ngOnInit() {
+  }
 
   selectItem(id: any): void {
     this.router.navigate(['/crud/' + this.link, id]);

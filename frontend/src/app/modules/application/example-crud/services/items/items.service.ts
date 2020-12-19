@@ -185,6 +185,7 @@ export class ItemsService {
   }
 
   private log(message: string): void {
+    console.log(message);
   }
 
 }

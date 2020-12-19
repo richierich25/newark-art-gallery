@@ -52,13 +52,13 @@ function getItems(req, res, next) {
     ' FROM sale t1';
     if (q != undefined) {
       sql = sql +
-        'AND (' +
+        ' AND (' +
         '(UPPER(assocName) LIKE \'%' + q + '%\')' +
         ')';
     }
     sql = sql + ' group by assocName, assocEmpId';
     sql = sql + ' LIMIT ' + limit + ' OFFSET ' + offset;
-
+    console.log(sql);
   db.any(sql)
     .then(records => {
       let results = [];
