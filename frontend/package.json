@@ -35,7 +35,7 @@
     "@fortawesome/fontawesome-free": "5.15.1",
     "@nguniversal/express-engine": "11.0.1",
     "bootstrap": "5.0.0-alpha3",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "chart.js": "2.9.4",
     "leaflet": "1.7.1",
     "ng2-charts": "2.4.2",
